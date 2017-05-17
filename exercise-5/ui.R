@@ -7,7 +7,7 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Add a descriptive application title
-  titlePanel("Add Title Here"),
+  titlePanel("Women's Status Survey"),
   
   # Here you will add the interactivity to your app
   # Create a selectInput where the user can select either Men, Women, or Both. 
@@ -19,11 +19,17 @@ shinyUI(fluidPage(
     sidebarPanel(
       #selectInput for Men, Women, or Both
       #inputID = sex
-      
+      selectInput(inputId = "sex",
+                  label = "Sex:",
+                  choices = c("Men", "Women", "Both"),
+                  selected = "Both"),
       
       #selectInput for Agree or Disagree
       #inputID = thoughts
-      
+      selectInput(inputID = "thoughts",
+                  label = "Who:",
+                  choices = "Agree", "Disagree",
+                  selected = "Agree")
       
     ),
     
